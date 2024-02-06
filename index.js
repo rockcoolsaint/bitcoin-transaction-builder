@@ -45,12 +45,12 @@ const getAddress = (str) => {
     network: bitcoin.networks.regtest // Use the appropriate network
   }).address;
   
-   console.log(`Address: ${address}`);
+  //  console.log(`Address: ${address}`);
   
    return address;
 }
 
-getAddress("Btrust Builders");
+console.log(getAddress("Btrust Builders"));
 
 // Create a new transaction builder
 // const txb = new bitcoin.TransactionBuilder(bitcoin.networks.bitcoin);
@@ -113,7 +113,7 @@ const sendBtcToAddress = async () => {
   const inputIndex = 0;
   // const p2wpkh = bitcoin.payments.p2wpkh({ pubkey: bitcoin.ECPair.fromPrivateKey(privateKey).publicKey });
   const p2sh = bitcoin.payments.p2sh({ redeem: {output: generateRedeemScript("Btrust Builders")}, network: bitcoin.networks.regtest});
-  const signature = txb.signInput(0, keyPair);
+  // const signature = txb.signInput(0, keyPair);
   // txb.finalizeAllInputs()
   
   // // Get the raw transaction in hex format
